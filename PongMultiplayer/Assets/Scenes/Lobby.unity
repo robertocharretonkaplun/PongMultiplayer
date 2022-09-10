@@ -1882,8 +1882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 291}
-  m_SizeDelta: {x: 1030.14, y: 127.83}
+  m_AnchoredPosition: {x: 0, y: 289}
+  m_SizeDelta: {x: 1159.65, y: 127.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077365047
 MonoBehaviour:
@@ -1905,7 +1905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PONG/GAME
+  m_text: PONG | GAME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ed2667e98c56ea47a910de71222f47f, type: 2}
   m_sharedMaterial: {fileID: 284237132485493221, guid: 3ed2667e98c56ea47a910de71222f47f, type: 2}

@@ -6,17 +6,21 @@ public class SpawnPlayers : MonoBehaviour
 {
   public int playerCount;
   public GameObject Player;
+  public GameObject Parent;
   // Start is called before the first frame update
   void Start()
   {
-    if (PhotonNetwork.PlayerList.Length == 1 )
+    if (PhotonNetwork.PlayerList.Length == 1)
     {
-      PhotonNetwork.Instantiate(Player.name, new Vector3(-9.2f, 0f, 0f), Quaternion.identity);
+      var obj = PhotonNetwork.Instantiate(Player.name, new Vector3(-7.5f, 0f, 0f), Quaternion.identity);
+      //obj.transform.parent = Parent.transform;
     }
     else
     {
-      PhotonNetwork.Instantiate(Player.name, new Vector3(9.2f, 0f, 0f), Quaternion.identity);
+      var obj = PhotonNetwork.Instantiate(Player.name, new Vector3(7.5f, 0f, 0f), Quaternion.identity);
+      //obj.transform.parent = Parent.transform;
     }
+
   }
 
   // Update is called once per frame
