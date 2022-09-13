@@ -4,9 +4,16 @@ using UnityEngine;
 using Photon.Pun;
 public class Bar : MonoBehaviour
 {
+  // For local, you have a boolean that sets a who is P1 and P2
   public bool IsBar1 = false;
+
+  // The speed value for the bar
   private float speed = 7f;
+
+  // The top/down limit for not passing the limits of the screen.
   private float Ylimit = 3.75f;
+
+
   private PhotonView photonView;
 
   private void Start()
