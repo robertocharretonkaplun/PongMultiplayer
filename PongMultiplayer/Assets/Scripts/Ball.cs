@@ -8,14 +8,20 @@ public class Ball : MonoBehaviour
   private float velocityMultiplayer = 1.1f;
 
   private Rigidbody2D RB;
+  private Vector2 collpos;
 
   // Start is called before the first frame update
   void Start()
   {
     RB = GetComponent<Rigidbody2D>();
-    if (PhotonNetwork.PlayerList.Length >= 2)
+    if (GameManager.instance.Multiplayer)
     {
-
+      if (PhotonNetwork.PlayerList.Length >= 2)
+      {
+        Launch();
+      }
+    }
+    {
       Launch();
     }
   }
@@ -33,6 +39,7 @@ public class Ball : MonoBehaviour
     {
       RB.velocity *= velocityMultiplayer;
     }
+    collpos = transform.position;
   }
 
   private void OnTriggerEnter2D(Collider2D collision)
@@ -41,19 +48,26 @@ public class Ball : MonoBehaviour
     {
       if (collision.CompareTag("RigthKillWall"))
       {
-        GameManager.instance.player1Score++;
+        LevelManager.instance.player1Score++;
       }
 
       if (collision.CompareTag("LeftKillWall"))
       {
-        GameManager.instance.player2Score++;
+        LevelManager.instance.player2Score++;
       }
 
-      GameManager.instance.UpdateScore();
+      LevelManager.instance.UpdateScore();
 
       RB.velocity = new Vector2(0, 0);
       transform.position = new Vector3(0, 0, 0);
       Launch();
     }
+  }
+
+  private void OnDrawGizmosSelected()
+  {
+
+    Debug.DrawLine(gameObject.transform.position, collpos, Color.green, 2, false);
+    
   }
 }

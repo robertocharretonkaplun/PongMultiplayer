@@ -24,25 +24,34 @@ public class Bar : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-
-    if (photonView.IsMine)
+    if (GameManager.instance.Multiplayer)
     {
-      float movement;
-
-      if (IsBar1)
+      if (photonView.IsMine)
       {
-        movement = Input.GetAxisRaw("Vertical2");
+        Movement();
       }
-      else
-      {
-        movement = Input.GetAxisRaw("Vertical");
-      }
-
-      Vector2 BarPos = transform.position;
-
-      BarPos.y = Mathf.Clamp(BarPos.y + movement * speed * Time.deltaTime, -Ylimit, Ylimit);
-      transform.position = BarPos;
-
     }
+    else
+    {
+      Movement();
+    }
+  }
+
+  void Movement()
+  {
+    float movement;
+    if (IsBar1)
+    {
+      movement = Input.GetAxisRaw("Vertical2");
+    }
+    else
+    {
+      movement = Input.GetAxisRaw("Vertical");
+    }
+
+    Vector2 BarPos = transform.position;
+
+    BarPos.y = Mathf.Clamp(BarPos.y + movement * speed * Time.deltaTime, -Ylimit, Ylimit);
+    transform.position = BarPos;
   }
 }
