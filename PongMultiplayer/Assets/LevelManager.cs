@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    UpdateScore);
+    UpdateScore();
 
     // check if the game is in local or multiplayer
     if (GameManager.instance.Multiplayer)

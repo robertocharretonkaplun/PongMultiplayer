@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
   {
     if (Multiplayer == false)
     {
-      SceneManager.LoadScene("Game1");
+      SceneManager.LoadScene("Local");
     }
   }
 }
