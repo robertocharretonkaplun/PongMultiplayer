@@ -623,7 +623,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 48684263699288940, guid: 752a9b2184756d347b6e40f2ca912aa7, type: 3}
       propertyPath: Multiplayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 48684263699288941, guid: 752a9b2184756d347b6e40f2ca912aa7, type: 3}
       propertyPath: m_RootOrder
